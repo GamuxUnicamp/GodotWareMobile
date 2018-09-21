@@ -13,7 +13,10 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.type == InputEvent.MOUSE_MOTION or event.type == InputEvent.MOUSE_BUTTON or event.type == InputEvent.KEY:
+	var a = Input.get_accelerometer()
+	if Input.get_accelerometer() != a:
+		emit_signal("minigame_end", false)
+	if event.type == InputEvent.SCREEN_TOUCH or event.type == InputEvent.SCREEN_DRAG:
 		emit_signal("minigame_end", false)
 
 func _process(delta):
