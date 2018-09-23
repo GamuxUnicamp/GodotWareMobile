@@ -11,8 +11,6 @@ func _ready():
 	get_node('Flare').set_emitting(true) # emit flare effect
 	get_node('Animation').play('fade_out') # start fade_out animation
 	
-	global.main_node.get_node('Camera').shake(8, 0.25)
-	
 	global.main_node.get_node('Audio_Player').play('explosion') # play explosion sound
 	
 	yield(get_node('Animation'), 'finished') # wait Animation to end

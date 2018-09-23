@@ -8,7 +8,7 @@ const scn_explosion = preload('res://minigames/SpaceShooter/scenes/Explosion.tsc
 const scn_flash = preload('res://minigames/SpaceShooter/scenes/Flash.tscn')
 
 # declare movement variables.
-var ACC = 2 # value to increase speed every frame if ship is in movement
+var ACC = -75 # value to increase speed every frame if ship is in movement
 var speed = Vector2() # amount to increase/decrease from position every frame
 
 # export ship's armor (life)
@@ -21,62 +21,37 @@ func _ready():
 
 # called every frame
 func _process(delta):
-	# makes the ship face the cursor
-	look_at(get_global_mouse_pos())
 	
-	# increase/decrease speed by acceleration depending on the keys pressed
-	if Input.is_key_pressed(KEY_W) or Input.is_action_pressed("ui_up"):
-		speed.y -= ACC * delta
-	if Input.is_key_pressed(KEY_D) or Input.is_action_pressed("ui_right"):
-		speed.x += ACC * delta
-	if Input.is_key_pressed(KEY_S) or Input.is_action_pressed("ui_down"):
-		speed.y += ACC * delta
-	if Input.is_key_pressed(KEY_A) or Input.is_action_pressed("ui_left"):
-		speed.x -= ACC * delta
-
-	# if the ship is out of screen, kill it!
-	if get_pos().y-16 >= global.view_size.height or \
-		get_pos().y+16 <= 0 or \
-		get_pos().x-16 >= global.view_size.width or \
-		get_pos().x+16 <= 0:
-			set_armor(0)
-
-	# apply movement
+	if get_pos().x <= 16:
+		speed.x = 0.1
+	elif get_pos().x >= global.view_size.width-16:
+		speed.x = -0.1
+	else:
+		speed.x = Input.get_accelerometer().x * ACC * delta
+		
 	translate(speed)
 
 # allows player to shoot
 func shoot():
+	yield(global.create_timer(1.5), 'timeout')
+	
 	while true: # infinite loop
 		# get both cannons position
 		var pos_left = get_node('Cannons/Cannon_Left').get_global_pos()
 		var pos_right = get_node('Cannons/Cannon_Right').get_global_pos()
 		
-		# if is pressing left button mouse, shoots from left cannon.
-		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			create_laser(pos_left)
-		# if is pressing right button mouse, shoots from right cannon.
-		if Input.is_mouse_button_pressed(BUTTON_RIGHT):
-	    	create_laser(pos_right)
+		create_laser(pos_left)
+		create_laser(pos_right)
 		
 		# wait shoot delay time in seconds
-		yield(global.create_timer(0.33), 'timeout')
+		yield(global.create_timer(0.5), 'timeout')
 	
 # creates laser
 func create_laser(pos):
 	var laser = scn_laser.instance() # instanciate scn_laser
+	
 	laser.set_pos(pos) # set laser's position to given parameter
-	
-	# get ship and mouse global positions
-	var ship_pos = get_global_pos()
-	var mouse_pos = get_global_mouse_pos()
-	
-	# create a new vector from the mouse_pos and ship_pos difference
-	var direction = Vector2(mouse_pos.x-ship_pos.x, mouse_pos.y - ship_pos.y)
-
-	# apply normalized direction to laser speed, defining it's direction
-	laser.speed = laser.speed * direction.normalized()
-	
-	laser.look_at(get_global_mouse_pos()) # make laser face the mouse
+	laser.speed = Vector2(0, -laser.speed.y)
 	
 	global.main_node.add_child(laser) # add to main_node
 	

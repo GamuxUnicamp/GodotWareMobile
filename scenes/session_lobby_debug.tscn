@@ -263,6 +263,7 @@ centered = false
 
 transform/pos = Vector2( 652, 0 )
 transform/scale = Vector2( 0.75, 1 )
+z/z = 5
 texture = ExtResource( 4 )
 centered = false
 flip_h = true

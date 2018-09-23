@@ -9,6 +9,7 @@ extents = Vector2( 10, 10 )
 
 [node name="Laser" type="Area2D"]
 
+z/z = 1
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

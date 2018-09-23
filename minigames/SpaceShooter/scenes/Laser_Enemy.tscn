@@ -14,7 +14,7 @@ height = 5.0
 
 transform/pos = Vector2( 0.104668, 0 )
 script/script = ExtResource( 2 )
-speed = Vector2( 150, 150 )
+speed = Vector2( 200, 200 )
 
 [node name="Sprite" parent="."]
 

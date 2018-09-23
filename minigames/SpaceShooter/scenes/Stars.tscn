@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://minigames/SpaceShooter/sprites/stars_far.png" type="Texture" id=1]
+[ext_resource path="res://minigames/SpaceShooter/scripts/Stars.gd" type="Script" id=2]
+[ext_resource path="res://minigames/SpaceShooter/sprites/stars_close.png" type="Texture" id=3]
+
+[node name="Stars" type="Node"]
+
+[node name="Stars_Far" type="Node2D" parent="."]
+
+transform/pos = Vector2( -80, 0 )
+
+[node name="Star_Far_0" type="Sprite" parent="Stars_Far"]
+
+transform/pos = Vector2( 0, -400 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 1 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 50 )
+
+[node name="Star_Far_1" type="Sprite" parent="Stars_Far"]
+
+transform/pos = Vector2( 400, -400 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 1 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 50 )
+
+[node name="Star_Far_2" type="Sprite" parent="Stars_Far"]
+
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 1 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 50 )
+
+[node name="Star_Far_3" type="Sprite" parent="Stars_Far"]
+
+transform/pos = Vector2( 400, 0 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 1 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 50 )
+
+[node name="Stars_Close" type="Node2D" parent="."]
+
+transform/pos = Vector2( -80, 0 )
+z/z = 2
+
+[node name="Star_Close_0" type="Sprite" parent="Stars_Close"]
+
+transform/pos = Vector2( 0, -400 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 3 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 100 )
+
+[node name="Star_Close_1" type="Sprite" parent="Stars_Close"]
+
+transform/pos = Vector2( 400, -400 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 3 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 100 )
+
+[node name="Star_Close_2" type="Sprite" parent="Stars_Close"]
+
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 3 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 100 )
+
+[node name="Star_Close_3" type="Sprite" parent="Stars_Close"]
+
+transform/pos = Vector2( 400, 0 )
+transform/scale = Vector2( 2.22227, 2.22227 )
+texture = ExtResource( 3 )
+centered = false
+script/script = ExtResource( 2 )
+speed = Vector2( 0, 100 )
+
+

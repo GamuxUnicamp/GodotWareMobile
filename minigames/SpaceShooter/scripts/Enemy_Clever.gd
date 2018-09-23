@@ -6,7 +6,7 @@ extends 'res://minigames/SpaceShooter/scripts/Enemy.gd'
 # store enemy's laser scene
 const scn_laser = preload('res://minigames/SpaceShooter/scenes/Laser_Enemy.tscn')
 
-const SHOOTING_DELAY = 2.5 # set shooting period
+const SHOOTING_DELAY = 1 # set shooting period
 
 # first function called (just one time)
 func _ready():
@@ -35,22 +35,8 @@ func shoot():
 		global.main_node.add_child(laser) # add its laser to main node
 		
 		# set laser direction and rotation depending on the clever movement
-		if abs(speed.x) < abs(speed.y):
-			if speed.x < 0:
-				laser.speed.x = -abs(laser.speed.x)
-				laser.set_rotd(270)
-			elif speed.x > 0:
-				laser.speed.x = abs(laser.speed.x)
-				laser.set_rotd(90)
-			laser.speed.y = 0
 			
-		elif abs(speed.x) > abs(speed.y):
-			if speed.y < 0:
-				laser.speed.y = -abs(laser.speed.y)
-				laser.set_rotd(180)
-			elif speed.y > 0:
-				laser.speed.y = abs(laser.speed.y)
-				laser.set_rotd(0)
-			laser.speed.x = 0
+		laser.speed.y = -abs(laser.speed.y)
+		laser.set_rotd(180)
 		
 		yield(global.create_timer(SHOOTING_DELAY), 'timeout') # shooting delay

@@ -10,6 +10,8 @@ points = Vector2Array( 16, -6, 16, 16, -16, 16, -16, -6, 0, -17 )
 
 [node name="Ship" type="Area2D"]
 
+transform/pos = Vector2( 251.534, 43.3535 )
+z/z = 1
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( -1, 8.74228e-08, -8.74228e-08, -1, 0, 0 )
