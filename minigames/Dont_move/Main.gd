@@ -13,13 +13,14 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	var a = Input.get_accelerometer()
-	if Input.get_accelerometer() != a:
-		emit_signal("minigame_end", false)
+
 	if event.type == InputEvent.SCREEN_TOUCH or event.type == InputEvent.SCREEN_DRAG:
 		emit_signal("minigame_end", false)
 
 func _process(delta):
+	print(Input.get_accelerometer().length())
+	if Input.get_accelerometer().length()>1:
+		emit_signal("minigame_end", false)
 	#This is the main game loop. Implement your main mechanics here
 	#To finish the game with a victory, use:
 	#		emit_signal("minigame_end", true)
