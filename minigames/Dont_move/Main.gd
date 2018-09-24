@@ -19,7 +19,7 @@ func _input(event):
 
 func _process(delta):
 	print(Input.get_accelerometer().length())
-	if Input.get_accelerometer().length()>1:
+	if Input.get_accelerometer().length()>10:
 		emit_signal("minigame_end", false)
 	#This is the main game loop. Implement your main mechanics here
 	#To finish the game with a victory, use:
