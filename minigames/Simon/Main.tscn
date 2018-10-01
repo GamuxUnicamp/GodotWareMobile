@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://minigames/Simon/Main.gd" type="Script" id=1]
-[ext_resource path="res://minigames/Simon/whitebg.png" type="Texture" id=2]
+[ext_resource path="res://minigames/Simon/white.png" type="Texture" id=2]
 [ext_resource path="res://minigames/Simon/green.png" type="Texture" id=3]
 [ext_resource path="res://minigames/Simon/red.png" type="Texture" id=4]
 [ext_resource path="res://minigames/Simon/yellow.png" type="Texture" id=5]
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.25, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.5, 1.0 ]
+"values": [ 1.0, 0.25, 1.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.25, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.5, 1.0 ]
+"values": [ 1.0, 0.25, 1.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -59,7 +59,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.25, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.5, 1.0 ]
+"values": [ 1.0, 0.25, 1.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -76,7 +76,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.25, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.5, 1.0 ]
+"values": [ 1.0, 0.25, 1.0 ]
 }
 
 [sub_resource type="SampleLibrary" id=5]
@@ -118,6 +118,7 @@ USE_MOUSE_HUD = true
 
 [node name="whitebg" type="Sprite" parent="."]
 
+transform/pos = Vector2( -240, -180 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -127,10 +128,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 320.0
-margin/bottom = 200.0
+margin/left = -240.0
+margin/top = -180.0
+margin/right = 960.0
+margin/bottom = 540.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -156,10 +157,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 320.0
-margin/top = 0.0
-margin/right = 640.0
-margin/bottom = 200.0
+margin/left = 960.0
+margin/top = -180.0
+margin/right = 2160.0
+margin/bottom = 540.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -184,10 +185,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 200.0
-margin/right = 320.0
-margin/bottom = 400.0
+margin/left = -240.0
+margin/top = 540.0
+margin/right = 960.0
+margin/bottom = 1260.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -212,10 +213,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 320.0
-margin/top = 200.0
-margin/right = 640.0
-margin/bottom = 400.0
+margin/left = 960.0
+margin/top = 540.0
+margin/right = 2160.0
+margin/bottom = 1260.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://minigames/Hammer/Main.gd" type="Script" id=1]
-[ext_resource path="res://minigames/Hammer/wood-background.png" type="Texture" id=2]
+[ext_resource path="res://minigames/Hammer/hammer.png" type="Texture" id=2]
 [ext_resource path="res://minigames/Hammer/arrow.png" type="Texture" id=3]
 [ext_resource path="res://minigames/Hammer/barred.png" type="Texture" id=4]
 [ext_resource path="res://minigames/Hammer/bargreen.png" type="Texture" id=5]
@@ -33,10 +33,18 @@ TIMEOUT_WIN = false
 USE_KEYS_HUD = false
 USE_MOUSE_HUD = true
 
-[node name="background" type="Sprite" parent="."]
+[node name="background" type="TextureFrame" parent="."]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -240.0
+margin/top = -180.0
+margin/right = 2160.0
+margin/bottom = 1260.0
 texture = ExtResource( 2 )
-centered = false
+stretch_mode = 0
 
 [node name="arrow" type="Sprite" parent="."]
 

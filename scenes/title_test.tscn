@@ -6,14 +6,14 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 40
+font/size = 80
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 
-font/size = 105
+font/size = 200
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 3 )
@@ -35,10 +35,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 640.0
-margin/bottom = 400.0
+margin/left = -240.0
+margin/top = -180.0
+margin/right = 2160.0
+margin/bottom = 1260.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
@@ -48,10 +48,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 182.0
-margin/top = 237.0
-margin/right = 471.0
-margin/bottom = 306.0
+margin/left = 532.0
+margin/top = 483.0
+margin/right = 1414.0
+margin/bottom = 639.0
 custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -65,10 +65,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 89.0
-margin/top = 30.0
-margin/right = 550.0
-margin/bottom = 160.0
+margin/left = 481.0
+margin/top = 6.0
+margin/right = 1438.0
+margin/bottom = 249.0
 custom_fonts/font = SubResource( 2 )
 text = "Godotware"
 align = 1
@@ -83,10 +83,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 248.0
-margin/top = 317.0
-margin/right = 414.0
-margin/bottom = 368.0
+margin/left = 709.0
+margin/top = 802.0
+margin/right = 1232.0
+margin/bottom = 853.0
 custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
