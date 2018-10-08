@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": FloatArray( 0.5, 1.5 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 960, 540 ), Vector2( -400, 540 ) ]
+"values": [ Vector2( 2880, 540 ), Vector2( 960, 540 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("microgame_pod:transform/scale")
@@ -55,7 +55,7 @@ tracks/2/keys = {
 "times": FloatArray( 0, 0.2, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -180, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -540, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("left_curtain:transform/scale")
@@ -65,7 +65,7 @@ tracks/3/keys = {
 "times": FloatArray( 0, 0.7 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.75, 1 ), Vector2( 1.02, 1 ) ]
+"values": [ Vector2( 0.75, 1 ), Vector2( 0.77, 1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("right_curtain:transform/pos")
@@ -75,7 +75,7 @@ tracks/4/keys = {
 "times": FloatArray( 0, 0.2, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 652, 0 ), Vector2( 1938.89, 3.09088 ), Vector2( 315, 0 ) ]
+"values": [ Vector2( 1956, 3.09088 ), Vector2( 1746, 0 ), Vector2( 945, 0 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("right_curtain:transform/scale")
@@ -85,7 +85,7 @@ tracks/5/keys = {
 "times": FloatArray( 0, 0.7 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.75, 1 ), Vector2( 1.02, 1 ) ]
+"values": [ Vector2( 0.75, 1 ), Vector2( 0.8, 1 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("life_meter:transform/pos")
@@ -95,7 +95,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.2, 0.3, 0.4, 0.5, 0.6 ),
 "transitions": FloatArray( 1, -1.03526, 1, 1, 1, -4 ),
 "update": 0,
-"values": [ Vector2( 0, -165 ), Vector2( 0, 0 ), Vector2( 0, -50 ), Vector2( 0, -65 ), Vector2( 0, -50 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, -495 ), Vector2( 0, 200 ), Vector2( 0, 150 ), Vector2( 0, 135 ), Vector2( 0, 150 ), Vector2( 0, 200 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -131,27 +131,27 @@ tracks/2/keys = {
 "times": FloatArray( 0.8, 1.3 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.02211, 1 ), Vector2( 0.75, 1 ) ]
+"values": [ Vector2( 0.77, 1 ), Vector2( 0.75, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("left_curtain:transform/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0.8, 1.3, 1.3, 1.5 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": FloatArray( 0.8, 1.5 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -180, 0 ), Vector2( -340.725, -9.27261 ), Vector2( -586.905, -12.3635 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -1000, -12.3635 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("right_curtain:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0.8, 1.3, 1.3, 1.5 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": FloatArray( 0.8, 1.5 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 315, 0 ), Vector2( 582, 0 ), Vector2( 1527.81, 0 ), Vector2( 2079.98, 6.18176 ) ]
+"values": [ Vector2( 945, 0 ), Vector2( 1956, 6.18176 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("right_curtain:transform/scale")
@@ -161,7 +161,7 @@ tracks/5/keys = {
 "times": FloatArray( 0.8, 1.3 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.02, 1 ), Vector2( 0.75, 1 ) ]
+"values": [ Vector2( 0.8, 1 ), Vector2( 0.75, 1 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("life_meter:transform/pos")
@@ -171,7 +171,7 @@ tracks/6/keys = {
 "times": FloatArray( 0.3, 1 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -165 ) ]
+"values": [ Vector2( 0, 200 ), Vector2( 0, -495 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("command_label:rect/pos")
@@ -181,7 +181,7 @@ tracks/7/keys = {
 "times": FloatArray( 0, 0.2, 1.2, 1.4 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -700, -29 ), Vector2( 0, -29 ), Vector2( 0, -29 ), Vector2( 700, -29 ) ]
+"values": [ Vector2( -2100, -150 ), Vector2( 0, -150 ), Vector2( 0, -150 ), Vector2( 2100, -150 ) ]
 }
 
 [sub_resource type="DynamicFont" id=4]
@@ -203,8 +203,7 @@ centered = false
 
 [node name="microgame_pod" type="Node2D" parent="."]
 
-transform/pos = Vector2( -400, 540 )
-transform/scale = Vector2( 0.5, 0.5 )
+transform/pos = Vector2( 960, 540 )
 
 [node name="icon" type="Sprite" parent="microgame_pod"]
 
@@ -224,15 +223,15 @@ margin/bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="game_timer"]
 
-visibility/visible = false
+rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
-margin/top = 375.0
-margin/right = 630.0
-margin/bottom = 391.0
+margin/left = 28.0
+margin/top = 993.0
+margin/right = 648.0
+margin/bottom = 1009.0
 custom_styles/fg = SubResource( 1 )
 range/min = 0.0
 range/max = 100.0
@@ -257,28 +256,30 @@ autoplay = ""
 
 [node name="left_curtain" type="Sprite" parent="."]
 
-transform/scale = Vector2( 1.02, 1 )
+transform/pos = Vector2( -1000, -12.3635 )
+transform/scale = Vector2( 0.75, 1 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="right_curtain" type="Sprite" parent="."]
 
-transform/pos = Vector2( 315, 0 )
-transform/scale = Vector2( 1.02, 1 )
+transform/pos = Vector2( 1956, 6.18176 )
+transform/scale = Vector2( 0.75, 1 )
 texture = ExtResource( 4 )
 centered = false
 flip_h = true
 
 [node name="command_label" type="Label" parent="."]
 
+rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -700.0
-margin/top = -29.0
-margin/right = -60.0
-margin/bottom = 370.0
+margin/left = 2100.0
+margin/top = -150.0
+margin/right = 2740.0
+margin/bottom = 249.0
 custom_fonts/font = SubResource( 4 )
 text = "Do the batato!"
 align = 1
@@ -296,14 +297,17 @@ margin/bottom = 312.0
 
 [node name="life_meter" type="Node2D" parent="."]
 
+transform/pos = Vector2( 0, -495 )
+transform/scale = Vector2( 2, 2 )
+
 [node name="life1" type="Node2D" parent="life_meter"]
 
 transform/pos = Vector2( 0, 22 )
 
 [node name="rope" type="Sprite" parent="life_meter/life1"]
 
-transform/pos = Vector2( 198.428, -15.5176 )
-transform/scale = Vector2( 1.8, 0.65 )
+transform/pos = Vector2( 198.428, -252.871 )
+transform/scale = Vector2( 1.8, 1.83677 )
 texture = ExtResource( 7 )
 
 [node name="heart1" type="Sprite" parent="life_meter/life1"]
@@ -314,12 +318,12 @@ texture = ExtResource( 8 )
 
 [node name="life2" type="Node2D" parent="life_meter"]
 
-transform/pos = Vector2( 0, 22 )
+transform/pos = Vector2( 150, 22 )
 
 [node name="rope" type="Sprite" parent="life_meter/life2"]
 
-transform/pos = Vector2( 328.428, -11.5176 )
-transform/scale = Vector2( 1.8, 0.65 )
+transform/pos = Vector2( 328.428, -127.85 )
+transform/scale = Vector2( 1.8, 1.23166 )
 texture = ExtResource( 7 )
 
 [node name="heart2" type="Sprite" parent="life_meter/life2"]
@@ -331,7 +335,7 @@ texture = ExtResource( 8 )
 
 [node name="life3" type="Node2D" parent="life_meter"]
 
-transform/pos = Vector2( 0, 22 )
+transform/pos = Vector2( 300, 22 )
 
 [node name="rope" type="Sprite" parent="life_meter/life3"]
 
@@ -341,8 +345,8 @@ texture = ExtResource( 7 )
 
 [node name="rope1" type="Sprite" parent="life_meter/life3"]
 
-transform/pos = Vector2( 447.428, -12.5176 )
-transform/scale = Vector2( 1.8, 0.65 )
+transform/pos = Vector2( 447.428, -249.268 )
+transform/scale = Vector2( 1.8, 1.83375 )
 texture = ExtResource( 7 )
 
 [node name="heart3" type="Sprite" parent="life_meter/life3"]

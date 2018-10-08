@@ -4,8 +4,8 @@
 [ext_resource path="res://minigames/Bang/bang_1.png" type="Texture" id=2]
 [ext_resource path="res://minigames/Bang/bang_3.png" type="Texture" id=3]
 [ext_resource path="res://minigames/Bang/bang_4.png" type="Texture" id=4]
-[ext_resource path="res://minigames/Bang/bang_2.png" type="Texture" id=5]
-[ext_resource path="res://minigames/Bang/bang_0.png" type="Texture" id=6]
+[ext_resource path="res://minigames/Bang/bang_0.png" type="Texture" id=5]
+[ext_resource path="res://minigames/Bang/bang_2.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -27,12 +27,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "ready",
+"name": "dodge",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "dodge",
+"name": "ready",
 "speed": 5.0
 } ]
 
@@ -48,6 +48,8 @@ USE_MOUSE_HUD = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
+transform/pos = Vector2( -195.678, -144.429 )
+transform/scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
 animation = "default"
 centered = false
