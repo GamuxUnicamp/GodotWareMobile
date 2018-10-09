@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://minigames/Artick/Main.gd" type="Script" id=1]
 [ext_resource path="res://minigames/Artick/scripts/article.gd" type="Script" id=2]
 [ext_resource path="res://minigames/Artick/Imagens/sprite_carrinho1.png" type="Texture" id=3]
 [ext_resource path="res://minigames/Artick/Imagens/sprite_cenario0.png" type="Texture" id=4]
+[ext_resource path="res://minigames/Artick/scripts/Personagem_bom.gd" type="Script" id=5]
+[ext_resource path="res://minigames/Artick/Imagens/sprite_carrinho0.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,6 +21,11 @@ extents = Vector2( 323.392, 31.3866 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 377.21, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 59.7449, 47.2753 )
 
 [node name="Main" type="Node2D"]
 
@@ -58,7 +65,7 @@ transform/pos = Vector2( -7.02802, -0.829311 )
 transform/scale = Vector2( 0.714387, 0.614025 )
 texture = ExtResource( 3 )
 
-[node name="ground" type="StaticBody2D" parent="."]
+[node name="floor" type="StaticBody2D" parent="."]
 
 transform/pos = Vector2( 320.023, 433.201 )
 input/pickable = false
@@ -72,7 +79,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 
 transform/pos = Vector2( 1.44159, -1.94119 )
 shape = SubResource( 2 )
@@ -114,6 +121,33 @@ scroll/ignore_camera_zoom = false
 
 texture = ExtResource( 4 )
 centered = false
+
+[node name="Personagem" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 249.23, 332.731 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.540375, 17.2915 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
+
+transform/pos = Vector2( -0.540375, 17.2915 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="Personagem"]
+
+visibility/behind_parent = true
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [connection signal="body_enter" from="artigo1" to="artigo1" method="_on_artigo1_body_enter"]
 
