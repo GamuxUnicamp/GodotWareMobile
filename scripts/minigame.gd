@@ -22,6 +22,8 @@ onready var testing = false
 # Determinate if duration was set.
 onready var time_set = false
 
+onready var is_paused = false
+
 func _ready():
 	#Check if it's a test or a session execution.
 	if get_tree().get_root().has_node(self.get_name()):
@@ -69,18 +71,23 @@ func stop():
 # Updates the timer bar values.
 func update_timer(delta):
 	#Updates remaining time for the minigame.
-	var time_percentage = time_bar.get_value()-delta
-	time_bar.set_value(time_percentage)
-	#Check if time ran out.
-	if time_percentage <= 0:
-		#End minigame by timeout.
-		if not testing:
-			emit_signal("minigame_end", TIMEOUT_WIN)
-	pass
+	if not is_paused:
+		var time_percentage = time_bar.get_value()-delta
+		time_bar.set_value(time_percentage)
+		#Check if time ran out.
+		if time_percentage <= 0:
+			#End minigame by timeout.
+			if not testing:
+				emit_signal("minigame_end", TIMEOUT_WIN)
+		pass
 
 # Rotate minigame in case its played on vertical.
 func rotate_minigame():
 	set_pos(Vector2(-get_viewport_rect().size.x/2,get_viewport_rect().size.y/2))
 	set_rot(PI/2.0)
 
+func pause_timer():
+	is_paused = true
 
+func resume_timer():
+	is_paused = false

@@ -2,12 +2,10 @@ extends KinematicBody2D
 
 # class member variables go here, for example:
 # var a = 2
-# var b = "textvar"
-var defWait = 0.2
-
+# var b = "textvar
 
 var alive = true
-var waitTime = defWait+(randf()*defWait/10)
+var waitTime
 var timer = 0
 var sprite = 0
 
@@ -18,13 +16,10 @@ func _ready():
 	# Initialization here
 	randomize()
 	
-	waitTime = defWait/2 + (randf()*defWait)
-	
 	pass
 
 func set_waitTime(wait):
 	waitTime = wait/2 + (randf()*wait)
-	defWait = wait
 	timer = waitTime/2
 
 func die():
@@ -40,7 +35,7 @@ func _process(delta):
 		if timer >= waitTime:
 			timer = 0
 #			waitTime = defWait+(randf()*defWait)
-			move(Vector2(25,0))
+			move(Vector2(70,0))
 			if sprite == 0:
 				sprite = 1
 				get_node("Sprite").set_frame(1)

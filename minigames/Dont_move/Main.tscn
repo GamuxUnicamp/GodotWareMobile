@@ -20,17 +20,18 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1984.0
-margin/bottom = 1216.0
+margin/left = -995.0
+margin/top = -475.0
+margin/right = 3128.0
+margin/bottom = 1599.0
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 0
 
 [node name="dont" type="Sprite" parent="."]
 
-transform/pos = Vector2( 314.427, 173.523 )
-transform/scale = Vector2( 0.499641, 0.499641 )
+transform/pos = Vector2( 908.468, 463.168 )
+transform/scale = Vector2( 0.805287, 0.646065 )
 texture = ExtResource( 3 )
 
 

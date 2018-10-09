@@ -9,21 +9,8 @@ signal minigame_end(win)
 
 func _ready():
 	#= MINIGAME SETUP =#
-	
-	DURATION = 4 + difficulty*0.5 # 4 seconds + 0.5 seconds for every dificulty level
-	var green_bar = get_node("bargreen")
-	if difficulty == 1:#Easy
-		get_node("arrow/AnimationPlayer").play("Move",-1,2.7)
-	elif difficulty == 2:#Medium
-		get_node("arrow/AnimationPlayer").play("Move",-1,3.6)
-	elif difficulty == 3:#Hard
-		get_node("arrow/AnimationPlayer").play("Move",-1,4.2)
-	elif difficulty == 4:#Insane
-		get_node("arrow/AnimationPlayer").play("Move",-1,5.7)
-	else:
-		get_node("arrow/AnimationPlayer").play("Move",-1,4.5)# PRA TESTAR ISOLADO
-	set_process_input(true)
 	#The command 'set_process(true)' is already called on base class _ready() function. It's not necessary to use it again.
+	pass
 
 func _process(delta):
 	#This is the main game loop. Implement your main mechanics here
@@ -43,11 +30,3 @@ func stop():
 	#Be sure to disable active minigame elements in this method.
 	.stop()
 	pass
-
-func _input(event):
-	if (event.type == InputEvent.MOUSE_BUTTON):
-		var xpos = get_node("arrow").get_pos().x
-		if (xpos>=720 and xpos<=1170):
-			emit_signal("minigame_end", true)
-		else:
-			emit_signal("minigame_end", false)
