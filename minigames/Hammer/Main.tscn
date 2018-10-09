@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 1.5, 3 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 20, 150 ), Vector2( 620, 150 ), Vector2( 20, 150 ) ]
+"values": [ Vector2( 60, 330 ), Vector2( 1850, 330 ), Vector2( 60, 330 ) ]
 }
 
 [node name="Main" type="Node2D"]
@@ -48,7 +48,8 @@ stretch_mode = 0
 
 [node name="arrow" type="Sprite" parent="."]
 
-transform/pos = Vector2( 20, 150 )
+transform/pos = Vector2( 716.333, 330 )
+transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="arrow"]
@@ -64,13 +65,16 @@ autoplay = ""
 
 [node name="barred" type="Sprite" parent="."]
 
-transform/pos = Vector2( 20, 180 )
+transform/pos = Vector2( 60, 400 )
+transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="bargreen" type="Sprite" parent="."]
 
-transform/pos = Vector2( 250, 180 )
+transform/pos = Vector2( 720, 400 )
+transform/rot = 0.1
+transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
 centered = false
 
