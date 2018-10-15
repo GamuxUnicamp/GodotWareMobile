@@ -13,6 +13,8 @@ onready var anim_transition = get_node("transition_animation")
 onready var command_label = get_node("command_label")
 # Reference to life meter's handler
 onready var life_meter = get_node("life_meter")
+# Reference to control_icons hcontainer
+onready var control_icons = get_node("command_label/control_icons/HBoxContainer")
 
 # Tracks if a minigame is currently runnning
 var is_minigame_running = false
@@ -31,7 +33,6 @@ onready var minigame_ref = []
 onready var minigame_ref_ind = []
 # Check if finished minigame
 onready var minigame_finished = false
-
 
 func _ready():
 	randomize()
@@ -60,6 +61,8 @@ func open_minigame():
 	
 	if(minigame_ref_ind.size() == 0):
 		_shuffle_minigame_ref_ind()
+	print(minigame_ref)
+	print(minigame_ref_ind)
 	current_minigame = minigame_ref[minigame_ref_ind[0]].instance()
 	minigame_ref_ind.pop_front()
 	current_minigame.translate(-get_viewport_rect().size/2)
@@ -69,6 +72,12 @@ func open_minigame():
 	#Changed command label
 	command_label.set_text(current_minigame.INSTRUCTION)
 	command_label.show()
+	control_icons.get_node("MouseIcon").hide()
+	control_icons.get_node("KeyIcon").hide()
+	if (current_minigame.USE_MOUSE_HUD):
+		control_icons.get_node("MouseIcon").show()
+	if (current_minigame.USE_KEYS_HUD):
+		control_icons.get_node("KeyIcon").show()
 	#Start animation
 	anim_transition.play("game_intro")
 	anim_transition.connect("finished", self, "_on_animation_finished")
@@ -97,12 +106,13 @@ func end_minigame(win):
 	if win:
 		print("You Win!")
 		won_minigames += 1
+		global.current_score = won_minigames
 		#If checked
 		if increase_world_velocity:
-			OS.set_time_scale(1 + won_minigames*0.1) # Gotta go fast!
+			OS.set_time_scale(1 + won_minigames*0.05) # Gotta go fast! # Increases speed by 2% for every minigame won
 	else:
 		print("You Lose!")
-#		lost_minigames += 1
+		lost_minigames += 1
 		update_life_meter()
 	#Start animation
 	anim_transition.play("game_end")
@@ -115,10 +125,10 @@ func close_minigame():
 	anim_transition.disconnect("finished", self, "close_minigame")
 	#Remove from scene
 	minigame_pod.remove_child(current_minigame)
-	if lost_minigames >= max_lives:
-		print("FINISH!")
-		print(won_minigames)
-		end_session()
+#	if lost_minigames >= max_lives:
+#		print("FINISH!")
+#		print(won_minigames)
+#		end_session()
 	open_minigame() #Will be removed
 	pass
 
