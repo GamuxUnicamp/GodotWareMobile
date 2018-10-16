@@ -3,9 +3,9 @@
 [ext_resource path="res://minigames/Artick/Main.gd" type="Script" id=1]
 [ext_resource path="res://minigames/Artick/scripts/article.gd" type="Script" id=2]
 [ext_resource path="res://minigames/Artick/Imagens/sprite_carrinho1.png" type="Texture" id=3]
-[ext_resource path="res://minigames/Artick/Imagens/sprite_cenario0.png" type="Texture" id=4]
-[ext_resource path="res://minigames/Artick/scripts/Personagem_bom.gd" type="Script" id=5]
-[ext_resource path="res://minigames/Artick/Imagens/sprite_carrinho0.png" type="Texture" id=6]
+[ext_resource path="res://minigames/Artick/scripts/Personagem_bom.gd" type="Script" id=4]
+[ext_resource path="res://minigames/Artick/Imagens/sprite_carrinho0.png" type="Texture" id=5]
+[ext_resource path="res://minigames/Artick/Imagens/sprite_cenario0.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -104,24 +104,6 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-scroll/offset = Vector2( 0, 0 )
-scroll/base_offset = Vector2( 0, 0 )
-scroll/base_scale = Vector2( 1, 1 )
-scroll/limit_begin = Vector2( 0, 0 )
-scroll/limit_end = Vector2( 0, 0 )
-scroll/ignore_camera_zoom = false
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-
-texture = ExtResource( 4 )
-centered = false
-
 [node name="Personagem" type="KinematicBody2D" parent="."]
 
 transform/pos = Vector2( 249.23, 332.731 )
@@ -132,7 +114,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
 
@@ -144,10 +126,17 @@ _update_shape_index = 0
 [node name="Sprite" type="Sprite" parent="Personagem"]
 
 visibility/behind_parent = true
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 2.27209, 0 )
+texture = ExtResource( 6 )
+centered = false
 
 [connection signal="body_enter" from="artigo1" to="artigo1" method="_on_artigo1_body_enter"]
 

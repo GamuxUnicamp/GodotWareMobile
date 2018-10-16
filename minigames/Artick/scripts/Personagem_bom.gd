@@ -6,14 +6,14 @@ const gravidade = 10
 
 var velocity = Vector2(0,0)
 var pos_atual
-var giro
+var giro = Vector3(0,0,0)
 
 func _ready():
 	set_process(true)
 	pass
 
 func _process(delta):
-	giro = Input.get_gyroscope()
+	giro.y += Input.get_gyroscope().y
 	if is_move_and_slide_on_floor():
 		velocity.y = 0
 		if giro.y >0:
