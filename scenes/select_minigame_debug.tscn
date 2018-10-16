@@ -17,16 +17,14 @@ difficulty = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 
-rect/min_size = Vector2( 1694, 0 )
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 86.0
 margin/top = 99.0
-margin/right = 1780.0
-margin/bottom = 561.0
+margin/right = 541.0
+margin/bottom = 268.0
 scroll/horizontal = true
 scroll/vertical = true
 scroll/deadzone = 0
