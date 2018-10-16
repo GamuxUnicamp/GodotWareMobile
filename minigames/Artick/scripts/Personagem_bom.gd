@@ -13,21 +13,17 @@ func _ready():
 	pass
 
 func _process(delta):
-	giro.y += Input.get_gyroscope().y
+	giro.x += Input.get_gyroscope().x
 	if is_move_and_slide_on_floor():
 		velocity.y = 0
-		if giro.y >0:
+		if giro.x >0:
 			if velocity.x > 0:
 				velocity.x += speed*delta
-			elif velocity.x == 0:
-				velocity.x = 500
 			else:
 				velocity.x = 500
-		elif giro.y < 0:
+		elif giro.x < 0:
 			if velocity.x < 0:
 				velocity.x -= speed*delta
-			elif velocity.x == 0:
-				velocity.x = -500
 			else:
 				velocity.x = -500
 		else:
