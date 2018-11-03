@@ -1,0 +1,28 @@
+[gd_resource type="Animation" format=1]
+
+[resource]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Copo_2:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5, 1 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 530 ), Vector2( 1245, 330 ), Vector2( 1530, 530 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Copo_3:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5, 1 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1530, 530 ), Vector2( 1245, 730 ), Vector2( 960, 530 ) ]
+}
+

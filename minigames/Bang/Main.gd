@@ -28,6 +28,7 @@ func _ready():
 func _input(event):
 	if event.type == InputEvent.MOUSE_BUTTON and end == false:
 		end = true
+		pause_timer()
 		get_node("WaitTimer").stop()
 		get_node("ShootTimer").stop()
 		

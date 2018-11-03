@@ -7,6 +7,9 @@ const lista_anim = ["swap_2_3", "swap_1_2", "swap_1_3"]
 const pos_1 = Vector2(390,530)
 const pos_2 = Vector2(960,530)
 const pos_3 = Vector2(1530,530)
+const pos_bola_1 = Vector2(390,630)
+const pos_bola_2 = Vector2(960,630)
+const pos_bola_3 = Vector2(1530,630)
 
 var anim_sequence = []
 var pos_bola = [0,1,0]
@@ -21,6 +24,7 @@ var anim_player
 func botao(qual):
 	if anim_counter>=10:
 		pause_timer()
+		bola.show()
 		anim_player.play("subir_"+str(qual+1))
 		if pos_bola[qual] == 1:
 			cond_vitoria = true
@@ -50,11 +54,12 @@ func _on_animation_end():
 	if passada == "descer":
 		bola.hide()
 		if pos_bola[0] == 1:
-			bola.set_pos(pos_1)
+			bola.set_pos(pos_bola_1)
 		if pos_bola[1] == 1:
-			bola.set_pos(pos_2)
+			bola.set_pos(pos_bola_2)
 		if pos_bola[2] == 1:
-			bola.set_pos(pos_3)
+			bola.set_pos(pos_bola_3)
+		
 		pass
 	if anim_counter < anim_sequence.size():
 		anim_player.play(lista_anim[anim_sequence[anim_counter]])
@@ -70,6 +75,9 @@ func start():
 	anim_player.connect("finished", self, "_on_animation_end")
 	anim_counter = 0
 	anim_sequence = []
+	get_node("Copo_1/Button").connect("pressed", self, "but_1")
+	get_node("Copo_2/Button").connect("pressed", self, "but_2")
+	get_node("Copo_3/Button").connect("pressed", self, "but_3")
 	for i in range (10):
 		var ran = randi()%3
 		anim_sequence.append(ran)
