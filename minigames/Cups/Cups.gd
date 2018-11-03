@@ -1,37 +1,104 @@
-extends Node2D
+extends "res://scripts/minigame.gd"
+
+signal minigame_end(win)
 
 const lista_anim = ["swap_2_3", "swap_1_2", "swap_1_3"]
 
-var anim_sequence = [0,1,2,2,1,0]
+const pos_1 = Vector2(390,530)
+const pos_2 = Vector2(960,530)
+const pos_3 = Vector2(1530,530)
+
+var anim_sequence = []
+var pos_bola = [0,1,0]
+var bola
+
+var cond_vitoria = false
+
 var anim_counter = 0
 
 var anim_player
 
-func _play():
-	anim_counter = 0
-	anim_sequence = []
-	for i in range (10):
-		anim_sequence.append(randi()%3)
-	_on_animation_end()
-	pass
+func botao(qual):
+	if anim_counter>=10:
+		pause_timer()
+		anim_player.play("subir_"+str(qual+1))
+		if pos_bola[qual] == 1:
+			cond_vitoria = true
+func but_1():
+	botao(0)
+func but_2():
+	botao(1)
+func but_3():
+	botao(2)
 
 func _ready():
-	randomize()
-	anim_player = get_node("AnimationPlayer")
-	anim_player.connect("finished", self, "_on_animation_end")
-	get_node("Button").connect("button_down", self, "_play")
-	set_process(true)
+	
 	pass
 	
 func _reset():
-	get_node("Copo_1").set_pos(Vector2(260,360))
-	get_node("Copo_2").set_pos(Vector2(640,360))
-	get_node("Copo_3").set_pos(Vector2(1020,360))
+	get_node("Copo_1").set_pos(pos_1)
+	get_node("Copo_2").set_pos(pos_2)
+	get_node("Copo_3").set_pos(pos_3)
 	pass
 	
 func _on_animation_end():
 	_reset()
+	var passada = anim_player.get_current_animation()
+	if passada[1] == 'u':
+		emit_signal("minigame_end", cond_vitoria)
+		pass
+	if passada == "descer":
+		bola.hide()
+		if pos_bola[0] == 1:
+			bola.set_pos(pos_1)
+		if pos_bola[1] == 1:
+			bola.set_pos(pos_2)
+		if pos_bola[2] == 1:
+			bola.set_pos(pos_3)
+		pass
 	if anim_counter < anim_sequence.size():
 		anim_player.play(lista_anim[anim_sequence[anim_counter]])
 		anim_counter += 1
+	pass
+	
+func start():
+	#Be sure to only enable minigame elements in this method.
+	DURATION = 15.0
+	randomize()
+	bola = get_node("Bola")
+	anim_player = get_node("AnimationPlayer")
+	anim_player.connect("finished", self, "_on_animation_end")
+	anim_counter = 0
+	anim_sequence = []
+	for i in range (10):
+		var ran = randi()%3
+		anim_sequence.append(ran)
+		if ran == 0:
+			var swp = pos_bola[1]
+			pos_bola[1] = pos_bola[2]
+			pos_bola[2] = swp
+		if ran == 1:
+			var swp = pos_bola[0]
+			pos_bola[0] = pos_bola[1]
+			pos_bola[1] = swp
+		if ran == 2:
+			var swp = pos_bola[0]
+			pos_bola[0] = pos_bola[2]
+			pos_bola[2] = swp
+	if difficulty == 2:
+		anim_player.set_speed(2)
+		DURATION /= 2
+	elif difficulty == 3:
+		anim_player.set_speed(4)
+		DURATION /= 4
+	elif difficulty == 4:
+		anim_player.set_speed(8)
+		DURATION /= 8
+	anim_player.play("descer")
+	.start()
+	pass
+
+func stop():
+	#Be sure to disable active minigame elements in this method.
+	.stop()
 	pass

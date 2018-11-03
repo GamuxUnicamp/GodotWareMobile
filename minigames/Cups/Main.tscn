@@ -1,15 +1,175 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://minigames/Cups/Main.gd" type="Script" id=1]
+[ext_resource path="res://minigames/Cups/Cups.gd" type="Script" id=1]
+[ext_resource path="res://minigames/Cups/New Piskel.png" type="Texture" id=2]
+[ext_resource path="res://minigames/Cups/sprite_0.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=5]
+
+resource/name = "descer"
+length = 0.5
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=6]
+
+resource/name = "subir_1"
+length = 0.5
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=7]
+
+resource/name = "subir_2"
+length = 0.5
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=8]
+
+resource/name = "subir_3"
+length = 0.5
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "swap_1_2"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "swap_1_3"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "swap_2_3"
+length = 1.0
+loop = false
+step = 0.1
 
 [node name="Main" type="Node2D"]
 
 script/script = ExtResource( 1 )
 NAME = "Cups"
-INSTRUCTION = "Choose"
-DURATION = 10
+INSTRUCTION = "Choose!"
+DURATION = 5.0
 TIMEOUT_WIN = false
 USE_KEYS_HUD = false
 USE_MOUSE_HUD = false
+
+[node name="Bola" type="Sprite" parent="."]
+
+transform/pos = Vector2( 960, 628.962 )
+texture = ExtResource( 2 )
+
+[node name="Copo_1" type="Node2D" parent="."]
+
+transform/pos = Vector2( 390, 530 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Copo_1"]
+
+visibility/opacity = 0.0
+visibility/self_opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -178.0
+margin/top = -188.0
+margin/right = 178.0
+margin/bottom = 223.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Sprite" type="Sprite" parent="Copo_1"]
+
+transform/scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="Copo_2" type="Node2D" parent="."]
+
+transform/pos = Vector2( 960, 530 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Copo_2"]
+
+visibility/opacity = 0.0
+visibility/self_opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -178.0
+margin/top = -188.0
+margin/right = 178.0
+margin/bottom = 223.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Sprite" type="Sprite" parent="Copo_2"]
+
+transform/scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="Copo_3" type="Node2D" parent="."]
+
+transform/pos = Vector2( 1530, 530 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Copo_3"]
+
+visibility/opacity = 0.0
+visibility/self_opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -178.0
+margin/top = -188.0
+margin/right = 178.0
+margin/bottom = 223.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Sprite" type="Sprite" parent="Copo_3"]
+
+transform/scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/descer = SubResource( 5 )
+anims/subir_1 = SubResource( 6 )
+anims/subir_2 = SubResource( 7 )
+anims/subir_3 = SubResource( 8 )
+anims/swap_1_2 = SubResource( 3 )
+anims/swap_1_3 = SubResource( 4 )
+anims/swap_2_3 = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 
