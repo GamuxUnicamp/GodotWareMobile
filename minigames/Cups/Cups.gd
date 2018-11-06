@@ -16,13 +16,15 @@ var pos_bola = [0,1,0]
 var bola
 
 var cond_vitoria = false
+var clicou = false
 
 var anim_counter = 0
 
 var anim_player
 
 func botao(qual):
-	if anim_counter>=10:
+	if anim_counter>=10 and not clicou:
+		clicou = true
 		pause_timer()
 		bola.show()
 		anim_player.play("subir_"+str(qual+1))

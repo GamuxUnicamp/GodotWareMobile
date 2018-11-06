@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://minigames/Cups/Cups.gd" type="Script" id=1]
 [ext_resource path="res://minigames/Cups/New Piskel.png" type="Texture" id=2]
-[ext_resource path="res://minigames/Cups/sprite_0.png" type="Texture" id=3]
-[ext_resource path="res://minigames/Cups/anim_copo.tres" type="Animation" id=4]
+[ext_resource path="res://minigames/Cups/Ball.png" type="Texture" id=3]
+[ext_resource path="res://minigames/Cups/sprite_0.png" type="Texture" id=4]
+[ext_resource path="res://minigames/Cups/anim_copo.tres" type="Animation" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -155,10 +156,23 @@ TIMEOUT_WIN = false
 USE_KEYS_HUD = false
 USE_MOUSE_HUD = false
 
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1920.0
+margin/bottom = 1080.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
 [node name="Bola" type="Sprite" parent="."]
 
 transform/pos = Vector2( 960, 630 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Copo_1" type="Node2D" parent="."]
 
@@ -187,7 +201,7 @@ flat = false
 [node name="Sprite" type="Sprite" parent="Copo_1"]
 
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Copo_2" type="Node2D" parent="."]
 
@@ -216,7 +230,7 @@ flat = false
 [node name="Sprite" type="Sprite" parent="Copo_2"]
 
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Copo_3" type="Node2D" parent="."]
 
@@ -245,7 +259,7 @@ flat = false
 [node name="Sprite" type="Sprite" parent="Copo_3"]
 
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -258,7 +272,7 @@ anims/subir_2 = SubResource( 3 )
 anims/subir_3 = SubResource( 4 )
 anims/swap_1_2 = SubResource( 5 )
 anims/swap_1_3 = SubResource( 6 )
-anims/swap_2_3 = ExtResource( 4 )
+anims/swap_2_3 = ExtResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
