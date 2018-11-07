@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://minigames/Artick/Main.gd" type="Script" id=1]
 [ext_resource path="res://minigames/Artick/scripts/article.gd" type="Script" id=2]
@@ -26,6 +26,11 @@ extents = Vector2( 2010.23, 10 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 143.589, 88.8633 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1038.6, 617.171 )
 
 [node name="Main" type="Node2D"]
 
@@ -140,6 +145,24 @@ transform/pos = Vector2( 2.27209, 0 )
 transform/scale = Vector2( 2.99891, 2.69259 )
 texture = ExtResource( 6 )
 centered = false
+
+[node name="Mouse" type="Area2D" parent="."]
+
+transform/pos = Vector2( 942.318, 571.305 )
+input/pickable = true
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
+
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
 
 [connection signal="body_enter" from="artigo1" to="artigo1" method="_on_artigo1_body_enter"]
 
