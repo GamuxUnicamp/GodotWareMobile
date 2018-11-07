@@ -10,6 +10,8 @@ signal minigame_end(win)
 func _ready():
 	# override minigame.gd set_process(true)
 	# this makes the game start when the curtains are fully opened
+	
+	get_node('Ship').hide()
 	set_process(false)
 
 # called every frame
@@ -17,7 +19,8 @@ func _process(delta):
 	# if the ship is destroyed, then the player lost the game
 	if not has_node('Ship'):
 		emit_signal('minigame_end', false)
-
+	if acabou_tempo:
+		get_node('Ship').hide()
 # function to be called when the curtains are fully opened
 func start():
 	# start _process
@@ -25,6 +28,8 @@ func start():
 	
 	# spawn nodes
 	get_node('Ship').set_process(true)
+	get_node('Ship').show()
+	
 	
 	# play background music
 	get_node('Audio_Player').get_node('Stream_Player').play()
