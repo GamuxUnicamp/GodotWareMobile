@@ -11,6 +11,8 @@ const pos_bola_1 = Vector2(390,630)
 const pos_bola_2 = Vector2(960,630)
 const pos_bola_3 = Vector2(1530,630)
 
+var num_anim = 5
+
 var anim_sequence = []
 var pos_bola = [0,1,0]
 var bola
@@ -23,7 +25,7 @@ var anim_counter = 0
 var anim_player
 
 func botao(qual):
-	if anim_counter>=10 and not clicou:
+	if anim_counter>=num_anim and not clicou:
 		clicou = true
 		pause_timer()
 		bola.show()
@@ -70,7 +72,7 @@ func _on_animation_end():
 	
 func start():
 	#Be sure to only enable minigame elements in this method.
-	DURATION = 15.0
+	DURATION = 1.5*num_anim
 	randomize()
 	bola = get_node("Bola")
 	anim_player = get_node("AnimationPlayer")
@@ -80,7 +82,19 @@ func start():
 	get_node("Copo_1/Button").connect("pressed", self, "but_1")
 	get_node("Copo_2/Button").connect("pressed", self, "but_2")
 	get_node("Copo_3/Button").connect("pressed", self, "but_3")
-	for i in range (10):
+	if difficulty == 2:
+		anim_player.set_speed(1.5)
+		num_anim = 8
+		DURATION = 1.5*num_anim
+	elif difficulty == 3:
+		anim_player.set_speed(3)
+		num_anim = 12
+		DURATION = 1.5*num_anim
+	elif difficulty == 4:
+		anim_player.set_speed(6)
+		num_anim = 15
+		DURATION = 1.5*num_anim
+	for i in range (num_anim):
 		var ran = randi()%3
 		anim_sequence.append(ran)
 		if ran == 0:

@@ -11,6 +11,7 @@ signal minigame_end(win)
 
 func _ready():
 	DURATION = 6.5
+	#get_node("final").hide()
 	#= MINIGAME SETUP =#
 	#The command 'set_process(true)' is already called on base class _ready() function. It's not necessary to use it again.
 	randomize()
@@ -42,7 +43,6 @@ func mouse_chegou():
 func area_jogador(area):
 	if area.get_name() == "final":
 		emit_signal("minigame_end", true)
-		get_node("final").hide()
 	else:
 		emit_signal("minigame_end", false)
 
@@ -52,6 +52,7 @@ func _process(delta):
 
 func start():
 	#Be sure to only enable minigame elements in this method.
+	#get_node("final").show()
 	.start()
 	pass
 
