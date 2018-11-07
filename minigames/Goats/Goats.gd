@@ -30,6 +30,7 @@ func die():
 		emit_signal("morreu")
 
 func _process(delta):
+	get_node("Button").connect("pressed", self, "die")
 	if alive:
 		timer += delta
 		if timer >= waitTime:

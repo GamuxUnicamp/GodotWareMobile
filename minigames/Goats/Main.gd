@@ -48,8 +48,6 @@ func _on_timeout():
 
 func start():
 	#Be sure to only enable minigame elements in this method.
-	get_node("Aim").set_process(true)
-	get_node("Aim").set_process_input(true)
 	get_node("EndTimer").connect("timeout",self,"_on_timeout")
 	var maior_tempo = 0;
 	for goat in get_node("Goats").get_children():
