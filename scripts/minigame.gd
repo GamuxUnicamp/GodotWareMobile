@@ -24,6 +24,8 @@ onready var time_set = false
 
 onready var is_paused = false
 
+onready var acabou_tempo = false
+
 func _ready():
 	#Check if it's a test or a session execution.
 	if get_tree().get_root().has_node(self.get_name()):
@@ -79,6 +81,7 @@ func update_timer(delta):
 			#End minigame by timeout.
 			if not testing:
 				emit_signal("minigame_end", TIMEOUT_WIN)
+				acabou_tempo = true
 		pass
 
 # Rotate minigame in case its played on vertical.
