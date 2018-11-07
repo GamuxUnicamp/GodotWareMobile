@@ -35,8 +35,6 @@ func shoot():
 		global.main_node.add_child(laser) # add its laser to main node
 		
 		# set laser direction and rotation depending on the clever movement
-			
-		laser.speed.y = -abs(laser.speed.y)
-		laser.set_rotd(180)
+		laser.set_rotd(0)
 		
 		yield(global.create_timer(SHOOTING_DELAY), 'timeout') # shooting delay
