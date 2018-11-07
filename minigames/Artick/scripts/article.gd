@@ -8,7 +8,8 @@ var b = 0
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	set_process(true)
+	hide()
+	set_process(false)
 	pass
 
 func _process(delta):

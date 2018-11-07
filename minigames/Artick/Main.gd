@@ -26,6 +26,8 @@ func _process(delta):
 func start():
 	#Be sure to only enable minigame elements in this method.
 	ratio = OS.get_time_scale() # Ajusts character speed by increasing difficuty
+	get_node("artigo1").set_process(true)
+	get_node("artigo1").show()
 	.start()
 	pass
 
