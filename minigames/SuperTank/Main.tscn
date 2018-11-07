@@ -60,13 +60,19 @@ transform/pos = Vector2( -2.56969, 1.28872 )
 transform/scale = Vector2( 0.600477, 0.648911 )
 texture = ExtResource( 3 )
 
+[node name="target" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1740.38, 154.591 )
+transform/scale = Vector2( 4.33619, 3.97484 )
+texture = ExtResource( 4 )
+
 [node name="final" type="Area2D" parent="."]
 
 transform/pos = Vector2( -15.1791, -26.5633 )
 transform/scale = Vector2( 3, 3 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 4.17956, 0, 0, 4.02019, 581.844, 62.7856 )
+shapes/0/transform = Matrix32( 4.17956, 0, 0, 4.02019, 585.925, 61.8787 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -75,17 +81,11 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final"]
 
-transform/pos = Vector2( 581.844, 62.7856 )
+transform/pos = Vector2( 585.925, 61.8787 )
 transform/scale = Vector2( 4.17956, 4.02019 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="final/CollisionShape2D"]
-
-transform/pos = Vector2( -0.438815, -0.5566 )
-transform/scale = Vector2( 0.347676, 0.353684 )
-texture = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -120,7 +120,6 @@ transform/pos = Vector2( 1.99152, 353.555 )
 
 [node name="Node2D1" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 510, 80 )
 transform/scale = Vector2( 3, 2.7 )
 
@@ -154,7 +153,6 @@ transform/pos = Vector2( -0.166748, 352.514 )
 
 [node name="Node2D2" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 939, 80 )
 transform/scale = Vector2( 3, 2.7 )
 
