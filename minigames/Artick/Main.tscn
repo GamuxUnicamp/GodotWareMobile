@@ -10,22 +10,22 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 14.7103, 15.1605 )
+extents = Vector2( 58.5629, 39.2942 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 323.392, 31.3866 )
+extents = Vector2( 1543.19, 31.3866 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 377.21, 10 )
+extents = Vector2( 2010.23, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 59.7449, 47.2753 )
+extents = Vector2( 143.589, 88.8633 )
 
 [node name="Main" type="Node2D"]
 
@@ -43,7 +43,7 @@ USE_MOUSE_HUD = false
 transform/pos = Vector2( 328.904, -57.186 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -6.57272, -6.24268 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 205.935, -101.112 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -53,7 +53,7 @@ script/script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="artigo1"]
 
-transform/pos = Vector2( -6.57272, -6.24268 )
+transform/pos = Vector2( 205.935, -101.112 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -61,8 +61,8 @@ _update_shape_index = 0
 [node name="Sprite" type="Sprite" parent="artigo1"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( -7.02802, -0.829311 )
-transform/scale = Vector2( 0.714387, 0.614025 )
+transform/pos = Vector2( 200.744, -96.5063 )
+transform/scale = Vector2( 2.41919, 1.51604 )
 texture = ExtResource( 3 )
 
 [node name="floor" type="StaticBody2D" parent="."]
@@ -70,7 +70,7 @@ texture = ExtResource( 3 )
 transform/pos = Vector2( 320.023, 433.201 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.44159, -1.94119 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 525.121, 673.529 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -81,7 +81,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 
-transform/pos = Vector2( 1.44159, -1.94119 )
+transform/pos = Vector2( 525.121, 673.529 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -91,7 +91,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 321.455, 455.709 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.07254, -25.2497 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 398.174, 661.605 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -99,17 +99,17 @@ collision/margin = 0.08
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead_line"]
 
-transform/pos = Vector2( -4.07254, -25.2497 )
+transform/pos = Vector2( 398.174, 661.605 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Personagem" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 249.23, 332.731 )
+transform/pos = Vector2( 905.727, 1012 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.540375, 17.2915 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 79.1499, -35.8354 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -118,7 +118,7 @@ script/script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
 
-transform/pos = Vector2( -0.540375, 17.2915 )
+transform/pos = Vector2( 79.1499, -35.8354 )
 shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
@@ -126,31 +126,18 @@ _update_shape_index = 0
 [node name="Sprite" type="Sprite" parent="Personagem"]
 
 visibility/behind_parent = true
+transform/pos = Vector2( 83.1642, -60.7076 )
+transform/scale = Vector2( 2.29944, 1.94856 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Button" type="Button" parent="Personagem"]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -60.0
-margin/top = -28.0
-margin/right = 59.0
-margin/bottom = 63.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-flat = false
-
 [node name="Sprite" type="Sprite" parent="."]
 
 visibility/behind_parent = true
 transform/pos = Vector2( 2.27209, 0 )
+transform/scale = Vector2( 2.99891, 2.69259 )
 texture = ExtResource( 6 )
 centered = false
 
