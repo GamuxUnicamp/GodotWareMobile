@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://minigames/SpaceShooter/Main.gd" type="Script" id=1]
-[ext_resource path="res://minigames/SpaceShooter/scenes/Stars.tscn" type="PackedScene" id=2]
+[ext_resource path="res://minigames/SpaceShooter/sprites/stars_far.png" type="Texture" id=2]
 [ext_resource path="res://minigames/SpaceShooter/scripts/Camera.gd" type="Script" id=3]
 [ext_resource path="res://minigames/SpaceShooter/scenes/Audio_Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://minigames/SpaceShooter/scenes/Ship.tscn" type="PackedScene" id=5]
@@ -17,7 +17,18 @@ TIMEOUT_WIN = true
 USE_KEYS_HUD = true
 USE_MOUSE_HUD = true
 
-[node name="Stars" parent="." instance=ExtResource( 2 )]
+[node name="Stars_0" type="Sprite" parent="."]
+
+transform/scale = Vector2( 6.5, 6.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Stars_1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1170, 0 )
+transform/scale = Vector2( 6.5, 6.5 )
+texture = ExtResource( 2 )
+centered = false
 
 [node name="Camera" type="Camera2D" parent="."]
 
@@ -43,8 +54,9 @@ script/script = ExtResource( 3 )
 
 [node name="Ship" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 320, 350 )
+transform/pos = Vector2( 960, 900 )
 transform/rot = -180.0
+transform/scale = Vector2( 2.75, 2.75 )
 
 [node name="Spawner_Enemy" parent="." instance=ExtResource( 6 )]
 

@@ -36,4 +36,15 @@ func start():
 
 # function to be called on winning/losing
 func stop():
+		# stop backgorund music
+	get_node('Audio_Player').get_node('Stream_Player').stop()
+	
+	# delete all nodes, except background, Audio_Player and Explosion
+	for i in range(get_child_count()):
+		if get_child(i).get_name() != 'Stars_0' and \
+			get_child(i).get_name() != 'Stars_1' and \
+			get_child(i).get_name() != 'Audio_Player' and \
+			get_child(i).get_name() != 'Flash' and \
+			get_child(i).get_name() != 'Explosion':
+				get_child(i).queue_free()
 	.stop()

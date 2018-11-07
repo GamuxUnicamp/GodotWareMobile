@@ -24,6 +24,7 @@ tracks/0/keys = {
 
 [node name="Explosion" type="Sprite"]
 
+transform/scale = Vector2( 2.75, 2.75 )
 z/z = 1
 texture = ExtResource( 1 )
 script/script = ExtResource( 2 )

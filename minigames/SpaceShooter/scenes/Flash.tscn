@@ -23,7 +23,7 @@ tracks/0/keys = {
 [node name="Flash" type="Sprite"]
 
 transform/pos = Vector2( -32, -24 )
-transform/scale = Vector2( 22, 14 )
+transform/scale = Vector2( 62.2445, 35.4692 )
 z/z = 4
 texture = ExtResource( 1 )
 centered = false
