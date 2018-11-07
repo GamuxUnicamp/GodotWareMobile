@@ -15,7 +15,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	randomize()
-	
+	get_node("Button").connect("pressed", self, "die")
 	pass
 
 func set_waitTime(wait):
@@ -30,7 +30,6 @@ func die():
 		emit_signal("morreu")
 
 func _process(delta):
-	get_node("Button").connect("pressed", self, "die")
 	if alive:
 		timer += delta
 		if timer >= waitTime:

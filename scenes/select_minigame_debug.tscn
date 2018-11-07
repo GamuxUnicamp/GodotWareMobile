@@ -17,7 +17,6 @@ difficulty = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
