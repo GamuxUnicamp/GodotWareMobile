@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://minigames/Goats/Main.gd" type="Script" id=1]
 [ext_resource path="res://minigames/Goats/normal.wav" type="Sample" id=2]
@@ -9,10 +9,8 @@
 [ext_resource path="res://minigames/Goats/Flower_F.gd" type="Script" id=7]
 [ext_resource path="res://minigames/Goats/Goats.gd" type="Script" id=8]
 [ext_resource path="res://minigames/Goats/goat_sprite0.png" type="Texture" id=9]
-[ext_resource path="res://minigames/Goats/aim.gd" type="Script" id=10]
-[ext_resource path="res://minigames/Goats/aim0.png" type="Texture" id=11]
-[ext_resource path="res://minigames/Goats/goat0.png" type="Texture" id=12]
-[ext_resource path="res://minigames/Goats/goat2.png" type="Texture" id=13]
+[ext_resource path="res://minigames/Goats/goat0.png" type="Texture" id=10]
+[ext_resource path="res://minigames/Goats/goat2.png" type="Texture" id=11]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -40,12 +38,7 @@ custom_solver_bias = 0.0
 radius = 35.6305
 height = 74.24
 
-[sub_resource type="CircleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 1.0
-
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [  ],
@@ -53,12 +46,12 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Lose",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Win",
 "speed": 5.0
@@ -802,6 +795,22 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
+[node name="Button" type="Button" parent="Goats/Goat_0"]
+
+visibility/opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -88.0
+margin/top = -76.0
+margin/right = 63.0
+margin/bottom = 55.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
 [node name="Goat_1" type="KinematicBody2D" parent="Goats" groups=[
 "Goats",
 ]]
@@ -834,6 +843,22 @@ transform/rot = 90.0
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Button" type="Button" parent="Goats/Goat_1"]
+
+visibility/opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -87.0
+margin/top = -68.0
+margin/right = 63.0
+margin/bottom = 62.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
 
 [node name="SamplePlayer" type="SamplePlayer" parent="Goats/Goat_1"]
 
@@ -885,6 +910,22 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Button" type="Button" parent="Goats/Goat_2"]
+
+visibility/opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -93.0
+margin/top = -80.0
+margin/right = 57.0
+margin/bottom = 50.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
 [node name="SamplePlayer" type="SamplePlayer" parent="Goats/Goat_2"]
 
 config/polyphony = 1
@@ -902,38 +943,11 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
-[node name="Aim" type="Area2D" parent="."]
-
-transform/pos = Vector2( 320, 200 )
-input/pickable = true
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Aim"]
-
-visibility/visible = false
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Aim"]
-
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
-
 [node name="End" type="AnimatedSprite" parent="."]
 
 transform/pos = Vector2( 920.6, 417.36 )
 transform/scale = Vector2( 15, 15 )
-frames = SubResource( 5 )
+frames = SubResource( 4 )
 animation = "default"
 
 
