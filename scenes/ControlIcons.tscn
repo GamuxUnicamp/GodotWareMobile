@@ -30,6 +30,7 @@ alignment = 1
 
 [node name="KeyIcon" type="TextureFrame" parent="HBoxContainer"]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -43,13 +44,14 @@ stretch_mode = 0
 
 [node name="MouseIcon" type="TextureFrame" parent="HBoxContainer"]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 228.0
+margin/left = 114.0
 margin/top = 0.0
-margin/right = 356.0
+margin/right = 242.0
 margin/bottom = 128.0
 texture = ExtResource( 2 )
 stretch_mode = 0

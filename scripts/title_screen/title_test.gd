@@ -1,18 +1,23 @@
 extends Node2D
 
-onready var diffOptButton = get_node("difficulty_optbtn")
-
 func _ready():
-	diffOptButton.add_item("Easy")
-	diffOptButton.add_item("Medium")
-	diffOptButton.add_item("Hard")
-	diffOptButton.add_item("Insane")
+	get_node("Easy").connect("button_down",self,"start_game_easy")
+	get_node("Medium").connect("button_down",self,"start_game_medium")
+	get_node("Hard").connect("button_down",self,"start_game_hard")
+	get_node("Insane").connect("button_down",self,"start_game_insane")
 
-func start_game_test():
+func start_game_easy():
+	global.selected_difficulty = 1;
 	get_tree().change_scene("res://scenes/session_lobby.tscn")
 
-func _on_start_button_pressed(): #_pressed
-	start_game_test()
+func start_game_medium():
+	global.selected_difficulty = 2;
+	get_tree().change_scene("res://scenes/session_lobby.tscn")
 
-func _on_difficulty_optbtn_item_selected( ID ):
-	global.selected_difficulty = ID+1
+func start_game_hard():
+	global.selected_difficulty = 3;
+	get_tree().change_scene("res://scenes/session_lobby.tscn")
+
+func start_game_insane():
+	global.selected_difficulty = 4;
+	get_tree().change_scene("res://scenes/session_lobby.tscn")
