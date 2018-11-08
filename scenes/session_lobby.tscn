@@ -72,10 +72,10 @@ tracks/4/path = NodePath("right_curtain:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.2, 0.7 ),
+"times": FloatArray( 0, 0.2, 0.9 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1956, 3.09088 ), Vector2( 1746, 0 ), Vector2( 945, 0 ) ]
+"values": [ Vector2( 918.72, -0.175049 ), Vector2( 1746, 0 ), Vector2( 919.779, -0.175049 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("right_curtain:transform/scale")
@@ -151,7 +151,7 @@ tracks/4/keys = {
 "times": FloatArray( 0.8, 1.5 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 945, 0 ), Vector2( 1956, 6.18176 ) ]
+"values": [ Vector2( 918.159, -0.100586 ), Vector2( 1956, 6.18176 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("right_curtain:transform/scale")
@@ -203,7 +203,8 @@ centered = false
 
 [node name="microgame_pod" type="Node2D" parent="."]
 
-transform/pos = Vector2( 960, 540 )
+transform/pos = Vector2( 2400, 540 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="icon" type="Sprite" parent="microgame_pod"]
 
@@ -256,15 +257,14 @@ autoplay = ""
 
 [node name="left_curtain" type="Sprite" parent="."]
 
-transform/pos = Vector2( -1000, -12.3635 )
-transform/scale = Vector2( 0.75, 1 )
+transform/scale = Vector2( 0.77, 1 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="right_curtain" type="Sprite" parent="."]
 
-transform/pos = Vector2( 1956, 6.18176 )
-transform/scale = Vector2( 0.75, 1 )
+transform/pos = Vector2( 918.159, -0.100586 )
+transform/scale = Vector2( 0.8, 1 )
 texture = ExtResource( 4 )
 centered = false
 flip_h = true
@@ -276,9 +276,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2100.0
+margin/left = -2100.0
 margin/top = -150.0
-margin/right = 2740.0
+margin/right = -1460.0
 margin/bottom = 249.0
 custom_fonts/font = SubResource( 4 )
 text = "Do the batato!"
@@ -297,7 +297,7 @@ margin/bottom = 312.0
 
 [node name="life_meter" type="Node2D" parent="."]
 
-transform/pos = Vector2( 0, -495 )
+transform/pos = Vector2( 0, 200 )
 transform/scale = Vector2( 2, 2 )
 
 [node name="life1" type="Node2D" parent="life_meter"]
