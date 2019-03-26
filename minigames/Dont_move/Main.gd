@@ -10,7 +10,7 @@ signal minigame_end(win)
 func _ready():
 	#= MINIGAME SETUP =#
 	#The command 'set_process(true)' is already called on base class _ready() function. It's not necessary to use it again.
-	set_process_input(true)
+	set_process_input(false)
 
 func _input(event):
 
@@ -31,6 +31,7 @@ func _process(delta):
 
 func start():
 	#Be sure to only enable minigame elements in this method.
+	set_process_input(true)
 	.start()
 	pass
 
